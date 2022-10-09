@@ -1,0 +1,19 @@
+<div class="app-layout-nav" >
+
+  <div class="nav-holder">
+
+    <div class="col col-md-2">
+        <app-nav-logo></app-nav-logo>
+    </div>
+
+    <div class="col col-md-8">
+        <app-nav-menu></app-nav-menu>
+    </div>
+
+    <div class="col col-md-2">
+        <app-nav-user-profile  [userConnected]="userConnected"  (messageToEmit)="getMessage($event)"> </app-nav-user-profile>
+    </div>
+
+  </div>
+
+</div>

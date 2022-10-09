@@ -1,0 +1,8 @@
+<div class="nav-menu-holder">
+    <ul class="nav-menu">
+        <li *ngFor="let item of menu; let i = index"
+        (click)="navMenuItemClicked(i)"
+        class="nav-menu-item {{item.state}}">{{item.label}}
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,28 @@
+<div class="module-content">
+  <div class="col col-md-2 module-menu">
+      <div class="menu-header">
+          <i class="fa fa-ellipsis-v"></i>Dashboard<mat-icon title="Toggle side menu" style="float: right; margin-top: -5px; cursor: pointer">menu</mat-icon>
+      </div>
+     <div class="divider"></div>
+      <div class="menu-items">
+          <ul>
+              <li *ngFor="let item of menu; let i = index"
+              (click)="menuItemClicked(i)"
+              placement="right" class="{{item.state}}">
+               <i *ngIf="item.state=='active'" class="fa fa-arrow-right" ></i> {{item.label}}
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div class="col col-md-10 module-view">
+
+      <div *ngIf="displayWelcomeMessage" class="module-welcome-message">
+          <i class="fa fa-smile-o" style="font-size: 80px; color: #DDD;"></i>
+          <br />
+          <br />
+          {{'mod.msg.welcome'}}
+      </div>
+
+      <router-outlet></router-outlet>
+  </div>
+</div>

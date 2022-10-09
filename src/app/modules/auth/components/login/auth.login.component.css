@@ -1,0 +1,83 @@
+
+.login-container {
+  display: block;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
+  background: #fff;
+  border: 1px solid #41E4FF;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 1px 4px 6px #b1e0ee;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class="login-container"] {
+    width: 80%;
+  }
+}
+
+.login-box-header {
+    background: #147fa3;
+    text-align: left;
+    padding: 15px 0px 15px 15px;
+    border: 1px solid #41E4FF;
+    border-radius: 10px;
+    color: #fff;
+    text-shadow: none;
+    font-size: 120%;
+}
+.login-box-header .lbox-title {
+    display: inline-block;
+    position: relative;
+    top: -5px;
+    left: 10px;
+}
+
+.login-box-body {
+    padding: 20px;
+}
+
+.login-icon {
+  margin-top: -2px;
+}
+
+.justifier {
+  width: 100%;
+  padding-bottom: 2%;
+ }
+
+.login-button {
+  width: 100px;
+  background: #E38B06;
+  padding: 2px 4px 2px 4px;
+  border: 1px solid #FFCB00;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: none;
+  float: right;
+  position: relative;
+  top: -15px;
+}
+
+.register-pane {
+  color: #0c4864;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.login-pane {
+  margin-bottom: 80px;
+  margin-top: 50px;
+}
+
+.metalic-font-bold {
+  color: #fff;
+}
+.metalic-font-light {
+  color: #DDD;
+  font-weight: bold;
+  text-shadow: 1px 1px 0px #FFF;
+}

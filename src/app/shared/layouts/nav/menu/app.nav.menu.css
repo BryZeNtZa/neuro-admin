@@ -1,0 +1,33 @@
+.nav-menu-holder {
+  position: relative;
+  height: 50px;
+}
+.nav-menu {
+    position: relative;
+    top: 15px;
+    height: 38px;
+    padding: 0;
+    width: 100%;
+}
+.nav-menu-item {
+    display: inline-block;
+    width: 120px;
+    height: 35px;
+    text-align: center;
+    padding-top: 8px;
+    border: 1px solid #E8E8E8;
+    border-radius: 12px 12px 0px 0px;
+    background: #F2F2F2;
+    margin-left: -1px;
+    font-size: 14px;
+    font-weight: normal;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+}
+
+.nav-menu-item:hover, .nav-menu-item.active {
+    background: #fafafa;
+    border-bottom: none;
+    text-shadow: none;
+    color: #000;
+}

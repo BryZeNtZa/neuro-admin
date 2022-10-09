@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+	  "username": "bryze",
+	  "password": "1234",
+	  "firstName": "NTSA",
+	  "lastName": "Brice",
+	  "token": ""
+    },
+    {
+      "id": 2,
+	  "username": "christelle",
+	  "password": "1234",
+	  "firstName": "MAMEKEM",
+	  "lastName": "Christelle",
+	  "token": ""
+    },
+    {
+      "id": 3,
+	  "username": "joel",
+	  "password": "1234",
+	  "firstName": "OSSONGO",
+	  "lastName": "Joel",
+	  "token": ""
+    }
+  ]
+}

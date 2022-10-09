@@ -1,0 +1,43 @@
+{
+  "reports": [
+    {
+      "id": 1,
+      "title": "TEST DSF 1",
+      "fiscalYearID": 0,
+      "period": {
+		    "id": 1,
+		    "start": "2019-01-01",
+		    "end": "2019-12-01"
+	    },
+      "type": "DSF",
+      "dateCreation": "2019-01-01",
+      "dateModification": "2019-01-01"
+    },
+    {
+      "id": 2,
+      "title": "TEST DSF 2",
+      "fiscalYearID": 0,
+      "period": {
+		    "id": 1,
+		    "start": "2019-01-01",
+		    "end": "2019-12-01"
+	    },
+      "type": "DSF",
+      "dateCreation": "2019-01-01",
+      "dateModification": "2019-01-01"
+    },
+    {
+      "id": 3,
+      "title": "TEST DSF 3",
+      "fiscalYearID": 0,
+      "period": {
+		    "id": 1,
+		    "start": "2019-01-01",
+		    "end": "2019-12-01"
+	    },
+      "type": "DSF",
+      "dateCreation": "2019-01-01",
+      "dateModification": "2019-01-01"
+    }
+  ]
+}

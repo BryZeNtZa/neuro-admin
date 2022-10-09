@@ -1,0 +1,15 @@
+.app-widget-snackbar-error {
+	background: red;
+}
+
+.app-widget-snackbar-success {
+	background: green;
+}
+
+.app-widget-snackbar-info {
+	background: skyblue;
+}
+
+.app-widget-snackbar-warning {
+	background: orange;
+}

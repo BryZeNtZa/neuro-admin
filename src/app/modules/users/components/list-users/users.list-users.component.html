@@ -1,0 +1,108 @@
+<div class="module-view-container">
+
+	<div class="module-view-container-header">
+
+		<div class="row">
+
+			<div class="col col-md-4">
+				<div ngbDropdown>
+					<button class="btn btn-secondary" (click)="openPrimary(periodmodal)" >Nouveau rapport DSF <i class="fa fa-file-o"></i></button>
+				</div>
+			</div>
+
+			<ng-template #periodmodal let-modal>
+				<div class="modal-header">
+				  <h4 class="modal-title" id="modal-primary-title">Création du RAPPORT DSF</h4>
+				  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+					<span aria-hidden="true">&times;</span>
+				  </button>
+				</div>
+				<div class="modal-body" style="padding: 10px">
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" (click)="modal.dismiss('Cross click'); openDsfEditor();">Générer <i class="fa fa-file-o" ></i></button>
+				</div>
+			</ng-template>
+
+			<div class="col col-md-8">
+
+				<div ngbDropdown>
+					<button class="btn btn-primary pull-right app-sort-btn" id="dataSortDropdown" ngbDropdownToggle>
+						Filtrer <i class="fa fa-sort"></i>
+					</button>
+					<div ngbDropdownMenu aria-labelledby="dataSortDropdown" class="data-sort-dropdown-contenair" style="width: 120%;">
+						<div class="data-sort-dropdown-header" >
+							<i class="fa fa-sort"></i> Filtrage des données
+						</div>
+						<div class="divider"></div>
+						<div class="data-sort-dropdown-content" >
+							Ici tous les critères de tri
+						</div>
+						<div class="divider"></div>
+						<div class="data-sort-dropdown-footer" >
+							<button class="btn btn-secondary pull-right" ngbDropdownToggle>
+								Filtrer <i class="fa fa-check"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="divider"></div>
+
+	<div class="module-view-container-content">
+
+		<div class="table-container-header" >
+			<div class="col col-md-8 table-container-title">
+				<span><i class="fa fa-list"></i>Liste des derniers rapports enregistrés</span>
+			</div>
+			<div class="col col-md-4">
+				<div class="search-data-input-holder pull-right">
+					<input class="search-data-input" type="text" placeholder="rechercher...">
+					<i class="fa fa-search" title="Go !"></i>
+				</div>
+			</div>
+		</div>
+
+		<div class="table-container">
+
+			<table mat-table [dataSource]="dataSource">
+
+				<!-- Position Column -->
+				<ng-container matColumnDef="position">
+				<th mat-header-cell *matHeaderCellDef> No. </th>
+				<td mat-cell *matCellDef="let element"> {{element.position}} </td>
+				</ng-container>
+
+				<!-- Name Column -->
+				<ng-container matColumnDef="name">
+				<th mat-header-cell *matHeaderCellDef> Intitulé </th>
+				<td mat-cell *matCellDef="let element"> {{element.name}} </td>
+				</ng-container>
+
+				<!-- Period Column -->
+				<ng-container matColumnDef="fiscalPeriod">
+				<th mat-header-cell *matHeaderCellDef> Période fiscale </th>
+				<td mat-cell *matCellDef="let element"> {{element.fiscalPeriod}} </td>
+				</ng-container>
+
+				<!-- creationDate Column -->
+				<ng-container matColumnDef="creationDate">
+				<th mat-header-cell *matHeaderCellDef> Date Création </th>
+				<td mat-cell *matCellDef="let element"> {{element.creationDate}} </td>
+				</ng-container>
+
+				<tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+				<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+			</table>
+		</div>
+
+	</div>
+
+</div>

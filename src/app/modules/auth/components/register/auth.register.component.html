@@ -1,0 +1,83 @@
+<div class="login-container">
+
+  <!-- Template Header starts -->
+  <div class="login-box-header">
+    <mat-icon>person</mat-icon> <span class="lbox-title">Register</span>
+  </div>
+  <!-- Template Header ends -->
+
+  <!-- Template Body starts -->
+  <div class="login-box-body">
+
+    <form [formGroup]="registerForm" class="form" novalidate>
+
+        <!-- Markup for getting first name starts -->
+        <mat-grid-list cols="1" rowHeight="50px">
+          <mat-grid-tile>
+              <mat-form-field class="justifier">
+                  <input matInput formControlName="first_name" placeholder="First name" text="text" >
+              </mat-form-field>
+          </mat-grid-tile>
+      </mat-grid-list>
+      <!-- Markup for getting first name ends -->
+
+        <!-- Markup for getting last name starts -->
+        <mat-grid-list cols="1" rowHeight="50px">
+          <mat-grid-tile>
+              <mat-form-field class="justifier">
+                  <input matInput formControlName="last_name" placeholder="Last name" text="text" >
+              </mat-form-field>
+          </mat-grid-tile>
+      </mat-grid-list>
+      <!-- Markup for getting last name ends -->
+
+      <!-- Markup for getting email starts -->
+      <mat-grid-list cols="1" rowHeight="50px">
+        <mat-grid-tile>
+            <mat-form-field class="justifier">
+                <input matInput formControlName="email" placeholder="Email" text="text" >
+            </mat-form-field>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <!-- Markup for getting email ends -->
+
+
+      <!-- Markup for getting Password starts -->
+      <mat-grid-list cols="1" rowHeight="50px">
+          <mat-grid-tile>
+              <mat-form-field class="justifier">
+                  <input matInput formControlName="password" placeholder="Password" text="password"  [type]="hidePassword ? 'password' : 'text'" >
+                  <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+                  <mat-icon class="login-icon">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+              </mat-form-field>
+          </mat-grid-tile>
+
+      </mat-grid-list>
+      <!-- Markup for getting Password ends -->
+
+      <!-- Markup for getting Password confirmation starts -->
+      <mat-grid-list cols="1" rowHeight="50px">
+        <mat-grid-tile>
+            <mat-form-field class="justifier">
+                <input matInput formControlName="password_confirm" placeholder="Retype the password" text="password_confirm" >
+            </mat-form-field>
+        </mat-grid-tile>
+
+    </mat-grid-list>
+    <!-- Markup for getting Password confirmation -->
+
+      <div class="login-pane">
+        <button mat-raised-button [disabled]="registerInProgress" (click)="register()" class="login-button metalic-font-bold">
+          Go
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+
+<div class="register-pane">
+<span style="font-size: 120%">Do you already have an account ? <a href="auth/login"><strong>Login here</strong></a></span>
+</div>

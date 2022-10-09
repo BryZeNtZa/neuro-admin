@@ -1,0 +1,45 @@
+.user-profile-toggler {
+	display: inline-block;
+	height:40px;
+	width: 40px;
+	border: 1px solid #DDD;
+	border-radius: 40px;
+	background: #FFF;
+}
+.user-profile-toggler .fa {
+	margin-left: 0px;
+	margin-top: 2px;
+	font-size: 18px;
+	color:#777;
+}
+.user-profile-menu {
+	padding: 0;
+	width: 100%;
+	list-style: none;
+	margin-top: 20px;
+}
+.user-profile-menu li:not(.divider) {
+	background: #F2F2F2;
+	padding: 8px 0px 8px 10px;
+	color: #666;
+	font-size: 14px;
+	font-weight: normal;
+	transition: background-color 0.5s ease;
+	cursor: pointer;
+}
+.user-profile-menu li:hover {
+	background:rgb(237, 245, 249);
+	color: #444;
+}
+.user-profile-menu li.divider {
+	height: 0px;
+	border-top: 1px solid #E3E1E1;
+	border-bottom: 1px solid #fafafa;
+}
+.user-profile-bottom-box {
+	background: linear-gradient(to bottom, #fff 0%,#ececec 100%);
+	text-align: right;
+	border-top: 1px solid #E3E1E1;
+	padding: 20px 10px 20px 10px;
+	border-radius: 0px 0px 4px 4px;
+}

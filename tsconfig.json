@@ -2,7 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -18,6 +18,35 @@
     "importHelpers": true,
     "target": "es2020",
     "module": "es2020",
+    "paths": {
+      "@app/*": [
+        "app/core/*"
+      ],
+      "@assets/*": [
+        "assets/*"
+      ],
+      "@shared/*": [
+        "app/shared/*"
+      ],
+      "@modules/*": [
+        "app/modules/*"
+      ],
+      "@entity/*": [
+        "app/domain/entities/*"
+      ],
+      "@dto/*": [
+        "app/domain/dto/*"
+      ],
+      "@service/*": [
+        "app/services/*"
+      ],
+      "@data/*": [
+        "app/domain/data/*"
+      ],
+      "@env/*": [
+        "environments/*"
+      ],
+    },
     "lib": [
       "es2020",
       "dom"

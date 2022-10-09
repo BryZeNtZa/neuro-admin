@@ -1,0 +1,53 @@
+<div class="login-container">
+
+    <!-- Template Header starts -->
+    <div class="login-box-header">
+      <mat-icon>lock_open</mat-icon> <span class="lbox-title">Login or register</span>
+    </div>
+    <!-- Template Header ends -->
+
+    <!-- Template Body starts -->
+    <div class="login-box-body">
+
+      <form [formGroup]="loginForm" class="form" novalidate>
+
+          <!-- Markup for getting Username starts -->
+          <mat-grid-list cols="1" rowHeight="100px">
+              <mat-grid-tile>
+                  <mat-form-field class="justifier">
+                      <input matInput formControlName="username" placeholder="Username" text="text" >
+                  </mat-form-field>
+              </mat-grid-tile>
+          </mat-grid-list>
+          <!-- Markup for getting Username ends -->
+
+          <!-- Markup for getting Password starts -->
+          <mat-grid-list cols="1" rowHeight="100px">
+              <mat-grid-tile>
+                  <mat-form-field class="justifier">
+                      <input matInput formControlName="password" placeholder="Password" text="password"  [type]="hidePassword ? 'password' : 'text'" >
+                      <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+                      <mat-icon class="login-icon">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                      </button>
+                      <br />
+                      <a href="auth/forgot" style="position: relative; top: 30px; right: -20px; float: right; font-size: 85%">Forgot your password ?</a>
+                  </mat-form-field>
+              </mat-grid-tile>
+
+          </mat-grid-list>
+          <!-- Markup for getting Password ends -->
+
+          <div class="login-pane">
+            <button mat-raised-button [disabled]="loginInProgress" (click)="login()" class="login-button metalic-font-bold">
+              Go
+            </button>
+          </div>
+
+      </form>
+    </div>
+
+</div>
+
+<div class="register-pane">
+  <span style="font-size: 120%">You don't have an account yet ? <a href="auth/register"><strong>Register here</strong></a></span>
+</div>

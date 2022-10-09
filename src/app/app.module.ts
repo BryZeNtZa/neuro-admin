@@ -1,18 +1,34 @@
-import { NgModule } from '@angular/core';
+import { Injector, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppRoutingModule } from '@app/routing/app.routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { AppModules } from '@modules/app.modules';
+import { AppRootComponent } from '@shared/layouts/root/app.root.component';
+
+import { AppSharedModules } from '@shared/app.shared.modules';
+import { AppServiceLocator } from '@app/app.service.locator';
+import { AppCoreModules } from '@app/app.core.modules';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    AppCoreModules.forRoot(),
+    AppSharedModules.forRoot(),
+    AppModules,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppRootComponent],
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private injector: Injector) {
+    // Service locator for manual injection
+    AppServiceLocator.setInjector(this.injector);
+  }
+}

@@ -1,0 +1,33 @@
+
+.app-footer {
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  color: #666;
+}
+
+.barre {
+  width: 100%;
+  height: 2em;
+  z-index: 1;
+}
+
+.barre1 {
+  height: 3px;
+  width: 100%;
+  background: #0c4864 repeat-x;
+  margin-bottom: 3px;
+}
+
+.barre2 {
+  height: 3px;
+  width: 100%;
+  background: #1CB5E0;
+}
+
+.app-copyright {
+  position: relative;
+  font-size: 10px;
+  padding-right: 4px;
+  float: right;
+}

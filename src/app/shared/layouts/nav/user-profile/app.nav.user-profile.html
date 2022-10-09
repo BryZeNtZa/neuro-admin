@@ -1,0 +1,23 @@
+<div ngbDropdown class="d-inline-block pull-right" style="float: right;">
+
+ <button mat-icon-button id="dropdownForm1" ngbDropdownToggle style="margin-top: 4px; margin-left: -100px;">
+	 <span class="user-profile-toggler"><fa-icon [icon]="icons.user"></fa-icon> <i class="fa fa-user"></i></span>
+ </button>
+  <div ngbDropdownMenu aria-labelledby="dropdownForm1" style="background: #F2F2F2; width: 250px; padding: 0; margin-top: 5px;">
+
+	<div style="height: 200px">
+		<ul class="user-profile-menu">
+			<li> <mat-icon>person</mat-icon> <span style="position: relative; top: -5px; left: 10px">User profile</span></li>
+			<li class="divider"></li>
+			<li> <mat-icon>settings</mat-icon><span style="position: relative; top: -5px; left: 10px"> Settings</span></li>
+			<li class="divider"></li>
+			<li> <mat-icon>help</mat-icon><span style="position: relative; top: -5px; left: 10px">About & Help</span></li>
+		</ul>
+	</div>
+
+	<div class="user-profile-bottom-box">
+		<button type="button" class="btn btn-sm btn-primary" style="width: 130px" (click)="logout(messageToSendC)"><mat-icon style="margin-left: -7px">power_settings_new</mat-icon> <span style="position: relative; top: -6px; left: 5px">Déconnexion</span> </button>
+	</div>
+
+  </div>
+</div>
