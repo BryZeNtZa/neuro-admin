@@ -21,6 +21,8 @@ import { AppUserProfileComponent } from './nav/user-profile/app.nav.user-profile
 import { AppFooterComponent } from './footer/app.footer.component';
 
 import { AppSplashComponent } from './splash/app.splash.component';
+import { AppSidebarComponent } from './sidebar/app.sidebar.component';
+import { AppContentComponent } from './content/app.content.component';
 
 @NgModule({
   imports: [
@@ -34,9 +36,11 @@ import { AppSplashComponent } from './splash/app.splash.component';
   declarations: [
     AppRootComponent,
     AppLayoutComponent,
+    AppContentComponent,
     AppNavComponent,
     AppLogoComponent,
     AppMenuComponent,
+    AppSidebarComponent,
     AppUserProfileComponent,
     AppFooterComponent,
     AppSplashComponent
@@ -44,9 +48,11 @@ import { AppSplashComponent } from './splash/app.splash.component';
   exports: [
     AppRootComponent,
     AppLayoutComponent,
+    AppContentComponent,
     AppNavComponent,
     AppLogoComponent,
     AppMenuComponent,
+    AppSidebarComponent,
     AppUserProfileComponent,
     AppFooterComponent,
     AppSplashComponent

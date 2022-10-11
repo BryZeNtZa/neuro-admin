@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppCoreComponent, AppStatus } from '@app/app.core.component';
 import { User, UserUtils } from '@entity/User';
 import { AppAuthService } from '@modules/auth/services/app.auth.service';
 
@@ -8,17 +9,18 @@ import { AppAuthService } from '@modules/auth/services/app.auth.service';
   templateUrl: './app.layout.component.html',
   styleUrls: ['./app.layout.component.css']
 })
-export class AppLayoutComponent /*implements OnInit */ {
+export class AppLayoutComponent extends AppCoreComponent implements OnInit {
 
-  constructor(
-    private authService: AppAuthService,
-    private router: Router) {}
+  constructor() {
+    super();
+  }
 
-  /*ngOnInit() {
-    if(!UserUtils.isEmptyOrNull(this.authService.currentUserValue)) {
-      console.log('Redirect to dashboard !!!');
-      this.router.navigate(['/dashoard']);
-    }
-  }*/
+  getAppStatus(): number {
+    return this.appStatus;
+  }
+
+  ngOnInit() {
+    console.log('APP LAYOUT INILITIALIZED !');
+  }
 
 }

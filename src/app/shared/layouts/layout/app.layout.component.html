@@ -1,7 +1,10 @@
-<app-nav-layout></app-nav-layout>
+<app-splash *ngIf="getAppStatus()==0"></app-splash>
 
-<div class="app-layout-content">
-  <router-outlet></router-outlet>
+<app-nav-layout *ngIf="getAppStatus()>0"></app-nav-layout>
+
+<div *ngIf="getAppStatus()>0" class="app-layout-content">
+  <router-outlet *ngIf="getAppStatus()==1"></router-outlet>
+  <app-content *ngIf="getAppStatus()==2"></app-content>
 </div>
 
 <app-footer-layout></app-footer-layout>

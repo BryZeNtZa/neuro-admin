@@ -1,0 +1,59 @@
+.mod-sidebar-menu {
+  background: #f5f5f5;
+  position: relative;
+  height: 100%;
+}
+
+.mod-sidebar-menu .sidebar-menu-header {
+  background: linear-gradient(to bottom, #fff 0%,#ececec 100%);
+  text-align: left;
+  padding: 10px;
+  color: #a2a1a1;
+  text-shadow: 1px 1px 0px #FFF;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.mod-sidebar-menu .sidebar-menu-items {
+  position: relative;
+  padding-left: 10px;
+  top: 20px;
+  right: -1px;
+  z-index: 2;
+}
+
+.mod-sidebar-menu .sidebar-menu-items ul {
+  list-style: none;
+}
+
+.mod-sidebar-menu .sidebar-menu-items ul li {
+  display: block;
+  background: #cfe0ea;
+  padding: 5px 0px 5px 10px;
+  border-radius: 5px 0px 0px 5px;
+  box-shadow: -1px 1px 1px #FFF;
+  margin-top: 3px;
+  border: 1px solid #DDD;
+  color: #666;
+  text-shadow: 1px 1px 0px #FFF;
+  transition: background-color 0.5s ease;
+  cursor: pointer;
+}
+
+.mod-sidebar-menu .sidebar-menu-items ul li:hover {
+  background: #c9d0d7;
+  border-right: none;
+  color: #0c4864;
+}
+
+.mod-sidebar-menu .sidebar-menu-items ul li.active {
+  background: #c9d0d7;
+  border-right: none;
+  color: #0c4864;
+}
+
+.mod-sidebar-menu .sidebar-menu-toggler {
+  float: right;
+  margin-top: -5px;
+  cursor: pointer;
+}
