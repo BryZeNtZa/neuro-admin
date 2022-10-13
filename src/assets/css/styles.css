@@ -88,7 +88,7 @@ button .fa {
   height: 38px !important;
 }
 .mat-row:hover {
-  background: #FDFFF8 !important;
+  background: #FFF5F0 !important;
 }
 .mat-row:nth-child(2n+1) {
   background: #F9F9F9;
@@ -96,16 +96,17 @@ button .fa {
 
 tr.mat-header-row {
   height: 38px !important;
-  background: linear-gradient(to bottom, #f2f2f2 0%, #fff 100%);
+  background: linear-gradient(to bottom, #dde3e6 0%, #fff 100%);
 }
 tr.mat-header-row th {
-	border-bottom: 1px solid #D4EC9B  !important;
+	border-bottom: 1px solid #FFDFAF  !important;
 }
 .mat-header-row {
 
 }
+
 .mat-header-cell {
-  color: #859354;
+  color: #E38B06;
   text-shadow: 1px 1px 0px #FFF;
   font-weight: 700;
 }
@@ -118,6 +119,11 @@ table.mat-table {
   height: 0px;
   border-top: 1px solid #DDD;
   border-bottom: 1px solid #FFF;
+}
+
+.mat-flat-button, .mat-raised-button, .mat-fab, .mat-mini-fab {
+  color: #fff !important;
+  background-color: #E38B06 !important;
 }
 
 /* DATA TABLES */

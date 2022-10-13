@@ -2,50 +2,35 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { User, UserUtils } from '@entity/User';
 import { AppAuthService } from '@modules/auth/services/app.auth.service';
+import { ISidebar } from '@shared/interfaces/ISidebar';
+import { SidebarService } from '@shared/services/app.sidebar.service';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './app.sidebar.component.html',
   styleUrls: ['./app.sidebar.component.css']
 })
-export class AppSidebarComponent /*implements OnInit */ {
+export class AppSidebarComponent implements OnInit {
 
-  moduleName: string = 'Dashboard';
-
-  menu = [
-    {
-      label: 'mod.menu.generate',
-      title: 'mod.menu.generate.description',
-      link: 'dsf/build',
-      state: 'active',
-    },
-    {
-      label: 'mod.menu.parameter',
-      title: 'mod.menu.parameter.description',
-      link: 'dsf/param',
-      state: '',
-    },
-  ];
+  sidebar!: ISidebar;
 
   constructor(
-    private authService: AppAuthService,
+    private sidebarService: SidebarService,
     private router: Router) {}
 
-  /*ngOnInit() {
-    if(!UserUtils.isEmptyOrNull(this.authService.currentUserValue)) {
-      console.log('Redirect to dashboard !!!');
-      this.router.navigate(['/dashoard']);
-    }
-  }*/
+  ngOnInit() {
+    this.sidebarService.sidebar.subscribe(sidebar => this.sidebar = sidebar);
+  }
 
   menuItemClicked(index: number) {
-    this.menu.forEach((item, i) => {
+    this.sidebar.menu.forEach((item, i) => {
       if (i !== index) {
-        this.menu[i].state = '';
+        //this.sidebar.menu[i].state = 'inactive';
+        item.state = 'inactive';
       }
     });
-    this.menu[index].state = 'active';
-    this.router.navigate([this.menu[index].link]);
+    this.sidebar.menu[index].state = 'active';
+    this.router.navigate([this.sidebar.menu[index].url]);
   }
 
 }

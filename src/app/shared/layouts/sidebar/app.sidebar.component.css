@@ -1,7 +1,8 @@
 .mod-sidebar-menu {
   background: #f5f5f5;
   position: relative;
-  height: 100%;
+  height: 102%;
+  margin-top: -3px;
 }
 
 .mod-sidebar-menu .sidebar-menu-header {
@@ -16,7 +17,7 @@
 
 .mod-sidebar-menu .sidebar-menu-items {
   position: relative;
-  padding-left: 10px;
+  padding-left: 0;
   top: 20px;
   right: -1px;
   z-index: 2;
@@ -24,15 +25,16 @@
 
 .mod-sidebar-menu .sidebar-menu-items ul {
   list-style: none;
+  margin-left: -30px;
 }
 
 .mod-sidebar-menu .sidebar-menu-items ul li {
   display: block;
-  background: #cfe0ea;
-  padding: 5px 0px 5px 10px;
+  background: #eee;
+  padding: 8px 0px 8px 10px;
   border-radius: 5px 0px 0px 5px;
   box-shadow: -1px 1px 1px #FFF;
-  margin-top: 3px;
+  margin-top: 10px;
   border: 1px solid #DDD;
   color: #666;
   text-shadow: 1px 1px 0px #FFF;
@@ -40,16 +42,19 @@
   cursor: pointer;
 }
 
-.mod-sidebar-menu .sidebar-menu-items ul li:hover {
-  background: #c9d0d7;
-  border-right: none;
-  color: #0c4864;
+.mod-sidebar-menu .sidebar-menu-items ul li mat-icon {
+  position: relative;
+  float: left;
+  top: -3px;
 }
 
-.mod-sidebar-menu .sidebar-menu-items ul li.active {
-  background: #c9d0d7;
-  border-right: none;
-  color: #0c4864;
+
+.mod-sidebar-menu .sidebar-menu-items ul li.active,
+.mod-sidebar-menu .sidebar-menu-items ul li:hover {
+  background: linear-gradient(90deg,#f0e6df 5%,#c9d0d7 100%);
+  color: #E38B06;
+  text-shadow: 1px 1px 1px #fff;
+  border: 1px solid #c9d0d7;
 }
 
 .mod-sidebar-menu .sidebar-menu-toggler {

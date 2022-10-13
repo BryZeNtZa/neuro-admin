@@ -2,17 +2,18 @@
 <div class="mod-sidebar-menu">
   <div class="sidebar-menu-header">
     <i class="fa fa-ellipsis-v"></i>
-    <span>{{moduleName}}</span>
-    <mat-icon class="sidebar-menu-toggler"
+    <span>{{sidebar.title}}</span>
+    <mat-icon class="sidebar-menu-toggler {{sidebar.state}}"
     title="Toggle side menu">menu</mat-icon>
   </div>
   <div class="divider"></div>
   <div class="sidebar-menu-items">
     <ul>
-        <li *ngFor="let item of menu; let i = index"
+        <li *ngFor="let item of sidebar.menu; let i = index"
         (click)="menuItemClicked(i)"
         placement="right" class="{{item.state}}">
-          <i *ngIf="item.state=='active'" class="fa fa-arrow-right" ></i> {{item.label}}
+          <!--a href="{{item.url}}"><i *ngIf="item.state=='active'" class="fa fa-arrow-right" ></i> {{item.label}}</a-->
+          <mat-icon *ngIf="item.state=='active'">keyboard_arrow_right</mat-icon>{{item.label}}
         </li>
     </ul>
   </div>

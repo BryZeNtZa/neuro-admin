@@ -13,27 +13,33 @@ export class AppMenuComponent extends AppCoreComponent {
 
   menu = [
     {
-      module: 'dsf',
       label: 'Dashboard',
-      link: '/dsf',
+      url: '/dashboard',
       state: 'active',
     },
     {
-      module: 'dsf',
+      label: 'Patients',
+      url: '/patients',
+      state: 'inactive',
+    },
+    {
       label: 'Appointments',
-      link: '/dsf',
+      url: '/appointments',
       state: 'inactive',
     },
     {
-      module: 'dsf',
-      label: 'Therapist',
-      link: '/dsf',
+      label: 'Therapists',
+      url: '/therapists',
       state: 'inactive',
     },
     {
-      module: 'dsf',
-      label: 'Personnel',
-      link: '/dsf',
+      label: 'Diagnosis & Treatment',
+      url: '/diagnosis-and-treatement',
+      state: 'inactive',
+    },
+    {
+      label: 'Configurations',
+      url: '/configurations',
       state: 'inactive',
     },
   ];
@@ -54,6 +60,6 @@ export class AppMenuComponent extends AppCoreComponent {
 
     this.menu[index].state = 'active';
 
-   this.router.navigate([this.menu[index].link], {state: {module: this.menu[index]}});
+   this.router.navigate([this.menu[index].url], {state: {module: this.menu[index]}});
   }
 }

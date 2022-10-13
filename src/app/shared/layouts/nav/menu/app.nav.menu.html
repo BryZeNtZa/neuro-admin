@@ -2,7 +2,9 @@
     <ul class="nav-menu">
         <li *ngFor="let item of menu; let i = index"
         (click)="navMenuItemClicked(i)"
-        class="nav-menu-item {{item.state}}">{{item.label}}
+        class="nav-menu-item {{item.state}}">
+          <!--a href="{{item.url}}">{{item.label}}</a-->
+          {{item.label}}
         </li>
     </ul>
 </div>
