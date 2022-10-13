@@ -7,11 +7,15 @@
     </div>
 
     <div class="col col-md-8">
-        <app-nav-menu></app-nav-menu>
+        <app-nav-menu *ngIf="appStatus == 2"></app-nav-menu>
     </div>
 
     <div class="col col-md-2">
-        <app-nav-user-profile  [userConnected]="userConnected"  (messageToEmit)="getMessage($event)"> </app-nav-user-profile>
+        <app-nav-user-profile
+        *ngIf="appStatus == 2"
+        [userConnected]="userConnected"
+        (messageToEmit)="getMessage($event)">
+      </app-nav-user-profile>
     </div>
 
   </div>

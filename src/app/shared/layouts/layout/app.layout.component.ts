@@ -1,8 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
-import { AppCoreComponent, AppStatus } from '@app/app.core.component';
-import { User, UserUtils } from '@entity/User';
-import { AppAuthService } from '@modules/auth/services/app.auth.service';
+import { Component, OnInit } from '@angular/core';
+import { AppCoreComponent } from '@app/app.core.component';
+import { AppStatus } from '@shared/interfaces/IAppStatus';
 
 @Component({
   selector: 'app-layout',
@@ -15,12 +13,8 @@ export class AppLayoutComponent extends AppCoreComponent implements OnInit {
     super();
   }
 
-  getAppStatus(): number {
-    return this.appStatus;
-  }
-
   ngOnInit() {
-    console.log('APP LAYOUT INILITIALIZED !');
+    this.refreshSession();
   }
 
 }

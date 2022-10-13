@@ -7,7 +7,7 @@ import { RegisterDto, User, UserUtils } from '@entity/User';
 import { AppApiClient } from '@app/http/app.api-client';
 import { DtoInterface } from '@dto/DtoInterface';
 
-const USER_LS_KEY = 'currentUser';
+const SESSION_KEY = 'neuro-session';
 
 @Injectable({
   providedIn: 'root'
@@ -17,9 +17,10 @@ export class AppAuthService {
   public currentUser: Observable<User>;
 
   constructor(private api: AppApiClient) {
-    const userData = localStorage.getItem(USER_LS_KEY);
-    if(userData !== null) {
-      this.currentUserSubject = new BehaviorSubject<User>(UserUtils.getFromData(userData));
+
+    const sessionData = this.getSessionData();
+    if(sessionData !== null) {
+      this.currentUserSubject = new BehaviorSubject<User>(UserUtils.getFromData(sessionData));
       this.currentUser = this.currentUserSubject.asObservable();
     }
     else {
@@ -43,7 +44,7 @@ export class AppAuthService {
         .pipe(
           map((user: User) => {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
-            localStorage.setItem(USER_LS_KEY, JSON.stringify(user));
+            localStorage.setItem(SESSION_KEY, JSON.stringify(user));
             this.currentUserSubject.next(user);
             return user;
           }),
@@ -53,8 +54,12 @@ export class AppAuthService {
 
   public logout() {
     // remove user from local storage to log user out
-    localStorage.removeItem(USER_LS_KEY);
+    localStorage.removeItem(SESSION_KEY);
     this.currentUserSubject.next(UserUtils.getEmpty());
+  }
+
+  getSessionData(): string | null {
+    return localStorage.getItem(SESSION_KEY);
   }
 
   errorHandler(error: Error) {

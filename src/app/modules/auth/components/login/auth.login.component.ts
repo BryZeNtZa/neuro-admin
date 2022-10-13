@@ -1,20 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AppFormService } from '@shared/services/app.form.service';
+import { FormGroup, Validators } from '@angular/forms';
 import { AppFormValidators } from '@shared/services/app.form-validators.service';
-import { AppSnackBarComponent } from '@shared/widgets/snackbar/app.snackbar.widget';
-import { AppAuthService } from '../../services/app.auth.service';
 import { first } from 'rxjs';
-import { HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
 import { User } from '@entity/User';
+import { AppCoreComponent } from '@app/app.core.component';
 
 @Component({
   selector: 'app-auth-login',
   templateUrl: './auth.login.component.html',
   styleUrls: ['./auth.login.component.css']
 })
-export class AuthLoginComponent implements OnInit {
+export class AuthLoginComponent extends AppCoreComponent implements OnInit {
 
   hidePassword = true;
   loginInProgress = false;
@@ -26,15 +22,8 @@ export class AuthLoginComponent implements OnInit {
     password: '',
   };
 
-
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    public form: FormBuilder,
-    public formService: AppFormService,
-    public snackbar: AppSnackBarComponent,
-    public authService: AppAuthService
-  ) {
+  constructor() {
+    super()
   }
 
   public login() {
@@ -54,7 +43,8 @@ export class AuthLoginComponent implements OnInit {
 
       result.subscribe({
         next: (data: User) => {
-          this.router.navigate(['/dashboard']);
+          this.createSession(data);
+          this.router.navigate(['/dashboard']).then(() => location.reload());
         },
         error: (e: Error) => {
           this.snackbar.error(`Login failed: ${e.message}`);

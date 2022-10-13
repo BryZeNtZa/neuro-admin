@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppCoreComponent } from '@app/app.core.component';
 import { UserUtils } from '@entity/User';
 
 @Component({
@@ -6,15 +7,19 @@ import { UserUtils } from '@entity/User';
   templateUrl: './app.nav.component.html',
   styleUrls: ['./app.nav.component.css']
 })
-export class AppNavComponent implements OnInit {
+export class AppNavComponent extends AppCoreComponent implements OnInit {
 
   appname = 'Neuro App';
 
   userConnected = UserUtils.getEmpty();
 
-  constructor() {}
+  constructor() {
+    super();
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.refreshSession();
+  }
 
   getMessage(msg: string) {
     console.log('App nav component message :', msg);

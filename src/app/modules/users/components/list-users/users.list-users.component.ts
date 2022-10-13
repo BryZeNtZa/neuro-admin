@@ -1,18 +1,9 @@
 import {
   Component,
-  ViewChild,
   OnInit,
-  ElementRef,
-  ChangeDetectorRef
 } from '@angular/core';
 
-import {
-  Router,
-  ActivatedRouteSnapshot,
-  RouterStateSnapshot
-} from '@angular/router';
-
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppCoreComponent } from '@app/app.core.component';
 import { AddUserComponent } from '../add-user/users.add-user.component';
@@ -40,12 +31,7 @@ export class ListUsersComponent extends AppCoreComponent implements OnInit {
 
   periodMode = 'year';
   data: any;
-  constructor(
-    private router: Router,
-    private el: ElementRef,
-    private ref: ChangeDetectorRef,
-    private modalService: NgbModal
-  ) {
+  constructor(private modalService: NgbModal) {
     super();
   }
 

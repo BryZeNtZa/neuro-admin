@@ -1,8 +1,6 @@
 import {
   Component,
   OnInit,
-  ElementRef,
-  ChangeDetectorRef
 } from '@angular/core';
 
 import {
@@ -37,13 +35,7 @@ export class UsersIndexComponent extends AppCoreComponent implements OnInit {
     },
   ];
 
-
-
-  constructor(
-    private router: Router,
-    private el: ElementRef,
-    private ref: ChangeDetectorRef
-  ) {
+  constructor() {
     super()
   }
 

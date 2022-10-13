@@ -44,9 +44,7 @@ export class AppMenuComponent extends AppCoreComponent {
     },
   ];
 
-  constructor(
-    private router: Router
-  ) {
+  constructor() {
     super()
   }
 
