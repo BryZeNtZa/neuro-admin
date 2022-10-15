@@ -1,0 +1,211 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  background: #fafafa;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+/*APP GENERAL STYLES*/
+.app-label {
+  color: #859354;
+}
+.app-name-input {
+  background: #FCFFEF;
+  color: #b7b7b7;
+  font-weight: 700;
+}
+div.app-label-input {
+  margin-bottom: 10px;
+}
+
+/*APPLICATIONS FONTS STYLES */
+.app-metalic-font-bold {
+  color: #666;
+  font-weight: bold;
+  text-shadow: 1px 1px 0px #FFF;
+}
+.app-metalic-font-light {
+  color: #DDD;
+  font-weight: bold;
+  text-shadow: 1px 1px 0px #FFF;
+}
+
+/*APPLICATION LAYOUTS*/
+.app-layout-contenair {
+  margin-top: 100px;
+  border: 2px solid blue;
+}
+.app-layout-content-block {
+  border: 1px solid red;
+}
+
+.app-layout-left-block {
+  border: 1px solid green;
+}
+
+/*BOOTSRAP STYLES OVERIDE*/
+.col {
+  padding-right: 0;
+  padding-left: 0;
+}
+.dropdown-toggle::after {
+  display: none;
+}
+button .fa {
+  margin-left: 10px;
+}
+
+.ngb-dp-month:first-child .ngb-dp-week {
+	padding-left: 0 !important;
+}
+.ngb-dp-month:last-child .ngb-dp-week {
+	padding-right: 0 !important;
+}
+
+.ngb-dp-month {
+	background: linear-gradient(to bottom, #FFF 10%, #D6E4A6 90%) !important;
+}
+.ngb-dp-header {
+	background: linear-gradient(to bottom, #D6E4A6 0%, #FDFFF8 100%) !important;
+}
+
+.ngb-dp-weekdays {
+	background: #FDFFF8 !important;
+	border: 0 !important;
+}
+.ngb-dp-weekdays {
+	background: #FDFFF8 !important;
+	border: 0 !important;
+}
+.ngb-dp-weekday {
+  color: green !important;
+}
+
+/* MATERIAL DESIGN STYLES OVERIDE*/
+.mat-row {
+  height: 38px !important;
+}
+.mat-row:hover {
+  background: #FFF5F0 !important;
+}
+.mat-row:nth-child(2n+1) {
+  background: #F9F9F9;
+}
+
+tr.mat-header-row {
+  height: 38px !important;
+  background: linear-gradient(to bottom, #dde3e6 0%, #fff 100%);
+}
+tr.mat-header-row th {
+	border-bottom: 1px solid #FFDFAF  !important;
+}
+.mat-header-row {
+
+}
+
+.mat-header-cell {
+  color: #E38B06;
+  text-shadow: 1px 1px 0px #FFF;
+  font-weight: 700;
+}
+table.mat-table {
+    margin-bottom: 10px;
+    border-bottom: 0;
+}
+
+.divider {
+  height: 0px;
+  border-top: 1px solid #DDD;
+  border-bottom: 1px solid #FFF;
+}
+
+.mat-flat-button, .mat-raised-button, .mat-fab, .mat-mini-fab {
+  color: #fff !important;
+  background-color: #E38B06 !important;
+}
+
+/* DATA TABLES */
+
+.table-container {
+  position: relative;
+  height: 500px;
+  overflow: auto;
+  border: 1px solid #CCC;
+  border-top: 1px solid #FFF;
+}
+
+.table-container table {
+  width: 100%;
+}
+
+.table-container-header {
+  display: flex;
+  background: linear-gradient(to bottom, #EAECE2 0%, #FDFFF8 100%);
+  padding: 10px;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px 4px 0px 0px;
+}
+
+.table-container-header .table-container-title {
+  color: #859354;
+  text-shadow: 1px 1px 0px #FFF;
+}
+.table-container-header .table-container-title span {
+  position: relative;
+  top: 2px;
+}
+
+.table-container-header .table-container-title span .fa {
+  margin-right: 10px;
+}
+.table-container-header .search-data-input {
+  background: #FBFBFB;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.table-container-header .search-data-input + .fa-search {
+  position: relative;
+  color: #CCC;
+  float: right;
+  top: 8px;
+  left: -18px;
+  cursor: pointer;
+}
+
+.data-sort-dropdown-contenair {
+  height: auto;
+  overflow-y: hidden;
+  box-shadow: 2px 2px 4px #CCC;
+  font-size: 95%;
+}
+
+.data-sort-dropdown-contenair .data-sort-dropdown-header {
+  background: linear-gradient(to bottom, #EAECE2 0%, #FDFFF8 100%);
+  padding: 10px;
+  text-align: left;
+  margin-top: -8px;
+  border-radius: 2px 2px 0px 0px;
+  color: #859354;
+  text-shadow: 1px 1px 0px #FFF;
+  font-size: 90%;
+}
+.data-sort-dropdown-contenair .data-sort-dropdown-header .fa {
+  margin-right: 15px;
+}
+
+.data-sort-dropdown-contenair .data-sort-dropdown-content {
+  height: 300px;
+  padding: 10px;
+  text-align: center;
+  overflow-y: scroll;
+}
+
+.data-sort-dropdown-contenair .data-sort-dropdown-footer {
+  height: 45px;
+  padding: 10px 20px 0px 0px;
+}
+
