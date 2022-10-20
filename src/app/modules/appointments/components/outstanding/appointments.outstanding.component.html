@@ -1,7 +1,7 @@
 <div style="padding: 20px;">
 
 	<div style="color: #E38B06; font-size: 150%; text-shadow: 1px 1px 1px #FFF;">
-		<mat-icon>menu</mat-icon><span style="position: relative; top: -6px; left: 10px">Appointments list</span>
+		<mat-icon>menu</mat-icon><span style="position: relative; top: -6px; left: 10px">Outstanding appointments</span>
 	</div>
 
 	<br />
@@ -59,7 +59,7 @@
       <!-- Patient Column -->
       <ng-container matColumnDef="patient">
         <th mat-header-cell *matHeaderCellDef>Patient</th>
-        <td mat-cell *matCellDef="let element"> {{element.therapist.first_name}} {{element.therapist.last_name}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.patient.first_name}} {{element.patient.last_name}} </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

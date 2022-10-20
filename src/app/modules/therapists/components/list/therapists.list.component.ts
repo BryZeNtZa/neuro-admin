@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
@@ -9,6 +9,10 @@ import { first } from 'rxjs/operators';
 import { of, throwError } from 'rxjs';
 import { HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
 import { User } from '@entity/User';
+import { Therapist } from '@entity/Therapist';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { SelectionModel } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-therapists-list',
@@ -17,23 +21,18 @@ import { User } from '@entity/User';
 })
 export class TherapistListComponent implements OnInit {
 
+  @ViewChild(MatPaginator)
+  paginator!: MatPaginator;
 
-  displayWelcomeMessage = false;
-
-  menu = [
-    {
-      label: 'mod.menu.generate',
-      title: 'mod.menu.generate.description',
-      link: 'dsf/build',
-      state: 'active',
-    },
-    {
-      label: 'mod.menu.parameter',
-      title: 'mod.menu.parameter.description',
-      link: 'dsf/param',
-      state: '',
-    },
+  therapists: Therapist[] = [
+    {id:1, first_name: 'Jessica', last_name: 'Halloway'},
+    {id:2, first_name: 'Amy', last_name: 'Thomson'},
+    {id:3, first_name: 'George', last_name: 'Remucal'},
   ];
+
+  displayedColumns: string[] = ['select', 'first_name', 'last_name'];
+  dataSource = new MatTableDataSource<Therapist>(this.therapists);
+  selection = new SelectionModel<Therapist>(true, []);
 
   constructor(
     private router: Router,
@@ -41,31 +40,38 @@ export class TherapistListComponent implements OnInit {
     public form: FormBuilder,
     public formService: AppFormService,
     public snackbar: AppSnackBarComponent,
-  ) {
+  ) {}
+
+  ngOnInit(): void {
+
   }
 
-  menuItemClicked(index: number) {
-
-    this.menu.forEach((item, i) => {
-      if (i !== index) {
-        this.menu[i].state = '';
-      }
-    });
-    this.menu[index].state = 'active';
-    this.displayWelcomeMessage = false;
-    this.router.navigate([this.menu[index].link]);
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
+  /** Whether the number of selected elements matches the total number of rows. */
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.dataSource.data.length;
+    return numSelected === numRows;
   }
 
-  ngOnInit() {
-      if (this.router.url === '/dsf') {
-        this.displayWelcomeMessage = true;
-        this.menu.map(item => { item.state = ''; });
-      } else {
-        this.displayWelcomeMessage = false;
-        this.menu.forEach(item => {
-          item.state =  (`/${item.link}` === this.router.url) ? 'active' : '';
-        });
-      }
+  /** Selects all rows if they are not all selected; otherwise clear selection. */
+  masterToggle() {
+    if (this.isAllSelected()) {
+      this.selection.clear();
+      return;
+    }
+
+    this.selection.select(...this.dataSource.data);
+  }
+
+  /** The label for the checkbox on the passed row */
+  checkboxLabel(row?: Therapist): string {
+    if (!row) {
+      return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
+    }
+    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${(row.id ?? 0) + 1}`;
   }
 
 }

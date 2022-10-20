@@ -9,6 +9,8 @@ import { AppWidgetsModule } from '@shared/widgets/app.widgets.module';
 import { AppLayoutsModule } from '@shared/layouts/app.layouts.module';
 import { TherapistsRoutesModule } from './therapists.routes.module';
 import { TherapistsIndexComponent } from './components/therapists.index.component';
+import { TherapistListComponent } from './components/list/therapists.list.component';
+import { TherapistCreateComponent } from './components/create/therapist.create.component';
 
 @NgModule({
   imports: [
@@ -22,10 +24,14 @@ import { TherapistsIndexComponent } from './components/therapists.index.componen
   ],
   declarations: [
     TherapistsIndexComponent,
+    TherapistListComponent,
+    TherapistCreateComponent,
   ],
   exports: [
     CommonModule,
     TherapistsIndexComponent,
+    TherapistListComponent,
+    TherapistCreateComponent,
   ]
 })
 

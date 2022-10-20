@@ -17,11 +17,11 @@ import { Patient, PatientUtils } from '@entity/Patient';
 import { Therapist, TherapistUtils } from '@entity/Therapist';
 
 @Component({
-  selector: 'app-appointments-list',
-  templateUrl: './appointments.list.component.html',
-  styleUrls: ['./appointments.list.component.css']
+  selector: 'app-appointments-outstanding',
+  templateUrl: './appointments.outstanding.component.html',
+  styleUrls: ['./appointments.outstanding.component.css']
 })
-export class AppointmentListComponent implements OnInit {
+export class AppointmentOutstandingComponent implements OnInit {
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
@@ -49,8 +49,8 @@ AppointmentStatus: any;
     therapist1.last_name = 'Kargas';
 
     let therapist2: Therapist = TherapistUtils.getEmpty();
-    therapist1.first_name = 'Martin';
-    therapist1.last_name = 'McClay';
+    therapist2.first_name = 'Martin';
+    therapist2.last_name = 'McClay';
 
     // some hard coded patients
     let patient1: Patient = PatientUtils.getEmpty();

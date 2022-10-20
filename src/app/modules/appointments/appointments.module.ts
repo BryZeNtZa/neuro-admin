@@ -10,6 +10,12 @@ import { AppLayoutsModule } from '@shared/layouts/app.layouts.module';
 import { AppointmentsRoutesModule } from './appointments.routes.module';
 import { AppointmentsIndexComponent } from './components/appointments.index.component';
 import { AppointmentListComponent } from './components/list/appointments.list.component';
+import { AppointmentCreateComponent } from './components/create/appointment.create.component';
+import { EnumValue } from '@shared/helpers/enum.pipe';
+import { AppointmentStatus } from '@entity/Appointment';
+import { AppointmentOutstandingComponent } from './components/outstanding/appointments.outstanding.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 @NgModule({
   imports: [
@@ -19,17 +25,22 @@ import { AppointmentListComponent } from './components/list/appointments.list.co
     ReactiveFormsModule,
     AngularMaterialModule,
     AppWidgetsModule,
-    AppLayoutsModule
+    AppLayoutsModule,
+    MatDatepickerModule,
   ],
   declarations: [
     AppointmentsIndexComponent,
-    AppointmentListComponent
+    AppointmentListComponent,
+    AppointmentCreateComponent,
+    AppointmentOutstandingComponent,
   ],
   exports: [
     CommonModule,
     AppointmentsIndexComponent,
-    AppointmentListComponent
-  ]
+    AppointmentListComponent,
+    AppointmentCreateComponent,
+    AppointmentOutstandingComponent,
+  ],
 })
 
 export class AppointmentsModule {}

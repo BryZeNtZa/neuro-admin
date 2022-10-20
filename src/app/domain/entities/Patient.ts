@@ -5,7 +5,7 @@ export type Patient = User & { user_id?: string, age?: number };
 export type CreateEditPatientDto = RegisterDto & { user_id?: string, age?: number };
 
 export class PatientUtils {
-  public static getEmpty() {
+  public static getEmpty(): Patient {
     return Object.assign({}, UserUtils.getEmpty(), { user_id: '', age: 0 });
   }
 

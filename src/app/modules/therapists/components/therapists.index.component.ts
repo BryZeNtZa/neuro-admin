@@ -16,6 +16,12 @@ export class TherapistsIndexComponent {
         url: 'therapists/list',
         label: 'Therapists list',
         state: 'active'
+      },
+      {
+        title: 'New therapist',
+        url: 'therapists/create',
+        label: 'New therapist',
+        state: 'inactive'
       }
     ]
   }

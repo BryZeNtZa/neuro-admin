@@ -23,6 +23,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 @NgModule({
    imports: [
     CommonModule,
@@ -45,7 +46,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSnackBarModule,
     MatCheckboxModule,
     MatDialogModule,
-    MatTabsModule
+    MatTabsModule,
+    MatButtonToggleModule,
    ],
    exports: [
     MatButtonModule,
@@ -68,6 +70,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatCheckboxModule,
     MatDialogModule,
     MatTabsModule,
+    MatButtonToggleModule,
    ],
    providers: [
     MatDatepickerModule,

@@ -1,0 +1,91 @@
+<div style="padding: 20px;">
+
+  <div style="color: #E38B06; font-size: 150%; text-shadow: 1px 1px 1px #FFF;">
+    <mat-icon>menu</mat-icon><span style="position: relative; top: -6px; left: 10px">New appointment</span>
+  </div>
+
+  <br />
+
+  <mat-dialog-content class="mat-typography" style="height: 100%">
+      <div style="border: 1px solid #b9b9b9; box-shadow: 1px 4px 6px #a8a8a8; padding: 10px; border-radius: 10px; margin-bottom: 10px; background: #eee; margin-top: 0.1px; height: 100%; padding: 5px;" [@.disabled]="true">
+        <mat-tab-group>
+          <mat-tab label="Appointment">
+            <div style="height: 400px; padding-top: 30px; padding-left: 30px">
+                <div class="form-container" style="align-content: center;">
+                  <p>
+                    <mat-form-field appearance="outline" [floatLabel]="'auto'" [style.width.%]=50 style="margin-top: 0.25px;margin-bottom: -1.5em;">
+                      <mat-label>Time slot</mat-label>
+                        <mat-select name="timeslot" [formControl]="timeSlotsControl" placeholder="Time slot">
+                          <mat-option *ngFor="let timeSlot of timeSlots" [value]="timeSlot.short">
+                          {{timeSlot.full}}
+                          </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </p>
+
+                  <p>
+                    <mat-form-field appearance="outline" [floatLabel]="'auto'" [style.width.%]=50 style="margin-top: 0.25px;margin-bottom: -1.5em;">
+                      <mat-label>Patient</mat-label>
+                        <mat-select name="patient" [formControl]="patientControl" placeholder="Patient">
+                          <mat-option *ngFor="let patient of patients" [value]="patient.short">
+                          {{patient.full}}
+                          </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </p>
+
+                  <p>
+                    <mat-form-field appearance="outline" [floatLabel]="'auto'" [style.width.%]=50 style="margin-top: 0.25px;margin-bottom: -1.5em;">
+                      <mat-label>Therapist</mat-label>
+                        <mat-select name="therapist" [formControl]="therapistControl" placeholder="Therapist">
+                          <mat-option *ngFor="let therapist of therapists" [value]="therapist.short">
+                          {{therapist.full}}
+                          </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </p>
+
+                </div>
+              </div>
+          </mat-tab>
+          <mat-tab label="Dates & Status">
+            <div style="height: 400px; padding-top: 30px; padding-left: 30px">
+              <p>
+                <mat-form-field appearance="outline" [style.width.%]=50 style="margin-top: 0.25px;margin-bottom: -1.5em;">
+                  <mat-label>Starting date</mat-label>
+                  <input type="text" placeholder="Starting date MM/DD/YYYY" matInput minlength="1" maxlength="255" [value]="">
+                  <mat-error>"receiver.niss.empty.error"</mat-error>
+                </mat-form-field>
+              </p>
+
+              <p>
+                <mat-form-field appearance="outline" [style.width.%]=50 style="margin-top: 0.25px;margin-bottom: -1.5em;">
+                  <mat-label>End date</mat-label>
+                  <input type="text" placeholder="End date MM/DD/YYYY" matInput minlength="1" maxlength="255" [value]="">
+                  <mat-error>"receiver.niss.empty.error"</mat-error>
+                </mat-form-field>
+              </p>
+
+            </div>
+          </mat-tab>
+          <mat-tab label="Notes">
+            <div style="height: 400px; padding-top: 30px; padding-left: 30px">
+              <p>
+                <mat-form-field appearance="outline" [style.width.%]=50 style="margin-top: 0.25px;">
+                  <mat-label>Notes</mat-label>
+                  <textarea rows="6" matInput placeholder="Notes" maxlength="255"></textarea>
+                </mat-form-field>
+              </p>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+
+      </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <!-- <button mat-raised-button mat-dialog-close>Annuler</button>
+    <button mat-raised-button [mat-dialog-close]="true" color="accent" cdkFocusInitial><mat-icon>save</mat-icon> &nbsp;Enregistrer</button> -->
+    <button mat-raised-button (click)="diffuse()" style="margin-right: 30px;"> <mat-icon>add</mat-icon> Save </button>
+  </mat-dialog-actions>
+
+</div>

@@ -1,7 +1,7 @@
 <div style="padding: 20px;">
 
     <div style="color: #E38B06; font-size: 150%; text-shadow: 1px 1px 1px #FFF;">
-      <mat-icon>menu</mat-icon><span style="position: relative; top: -6px; left: 10px">New patient</span>
+      <mat-icon>menu</mat-icon><span style="position: relative; top: -6px; left: 10px">New therapist</span>
     </div>
 
     <br />
@@ -9,7 +9,7 @@
   <mat-dialog-content class="mat-typography" style="height: 100%">
       <div style="border: 1px solid #b9b9b9; box-shadow: 1px 4px 6px #a8a8a8; padding: 10px; border-radius: 10px; margin-bottom: 10px; background: #eee; margin-top: 0.1px; height: 100%; padding: 5px;" [@.disabled]="true">
         <mat-tab-group>
-          <mat-tab label="Civil information">
+          <mat-tab label="General information">
             <div style="height: 400px; padding-top: 30px; padding-left: 30px">
                 <div class="form-container" style="align-content: center;">
                   <p>
@@ -19,6 +19,7 @@
                       <mat-error>"receiver.niss.empty.error"</mat-error>
                     </mat-form-field>
                   </p>
+
                   <p>
                     <mat-form-field appearance="outline" [style.width.%]=50 style="margin-top: 0.25px;margin-bottom: -1.5em;">
                       <mat-label>Last name</mat-label>
@@ -26,6 +27,14 @@
                       <mat-error>"receiver.niss.empty.error"</mat-error>
                     </mat-form-field>
                   </p>
+
+                  <p>
+                    <mat-form-field appearance="outline" [style.width.%]=50 style="margin-top: 0.25px;">
+                      <mat-label>Bio</mat-label>
+                      <textarea rows="4" matInput placeholder="Bion" maxlength="255"></textarea>
+                    </mat-form-field>
+                  </p>
+
                   <p>
                     <mat-form-field appearance="outline" [floatLabel]="'auto'" [style.width.%]=50 style="margin-top: 0.25px;margin-bottom: -1.5em;">
                       <mat-label>Gender</mat-label>
@@ -36,12 +45,7 @@
                       </mat-select>
                     </mat-form-field>
                   </p>
-                    <p>
-                      <mat-form-field appearance="outline" [style.width.%]=50 style="margin-top: 0.25px;">
-                        <mat-label>Other Description</mat-label>
-                        <textarea rows="4" matInput placeholder="Other information" maxlength="255"></textarea>
-                      </mat-form-field>
-                    </p>
+
                 </div>
               </div>
           </mat-tab>
@@ -54,6 +58,7 @@
                   <mat-error>"receiver.niss.empty.error"</mat-error>
                 </mat-form-field>
               </p>
+
               <p>
                 <mat-form-field appearance="outline" [style.width.%]=50 style="margin-top: 0.25px;margin-bottom: -1.5em;">
                   <mat-label>Phone number</mat-label>
@@ -68,6 +73,42 @@
                   <mat-error>"receiver.niss.empty.error"</mat-error>
                 </mat-form-field>
               </p>
+
+            </div>
+          </mat-tab>
+          <mat-tab label="Professional">
+            <div style="height: 400px; padding-top: 30px; padding-left: 30px">
+              <p>
+                <mat-form-field appearance="outline" [style.width.%]=50 style="margin-top: 0.25px;margin-bottom: -1.5em;">
+                  <mat-label>Specialization</mat-label>
+                  <input type="text" placeholder="List of specializations" matInput minlength="1" maxlength="255" [value]="">
+                  <mat-error>"receiver.niss.empty.error"</mat-error>
+                </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field appearance="outline" [style.width.%]=50 style="margin-top: 0.25px;margin-bottom: -1.5em;">
+                  <mat-label>Availability</mat-label>
+                  <input type="text" placeholder="Availability" matInput minlength="1" maxlength="255" [value]="">
+                  <mat-error>"receiver.niss.empty.error"</mat-error>
+                </mat-form-field>
+              </p>
+
+              <p>
+                <mat-form-field appearance="outline" [style.width.%]=50 style="margin-top: 0.25px;margin-bottom: -1.5em;">
+                  <mat-label>Insurance</mat-label>
+                  <input type="text" placeholder="Insurance" matInput minlength="1" maxlength="255" [value]="">
+                  <mat-error>"receiver.niss.empty.error"</mat-error>
+                </mat-form-field>
+              </p>
+              <br />
+              <p>
+                Approved ?
+                <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                  <mat-button-toggle value="bold">YES</mat-button-toggle>
+                  <mat-button-toggle value="italic">NO</mat-button-toggle>
+                </mat-button-toggle-group>
+              </p>
+
 
             </div>
           </mat-tab>

@@ -15,6 +15,7 @@ import { AppWidgetsModule } from '@shared/widgets/app.widgets.module';
 
 // Import shares modules
 import { AppLayoutsModule } from '@shared/layouts/app.layouts.module';
+import { EnumValue } from './helpers/enum.pipe';
 
 @NgModule({
   imports: [
@@ -40,7 +41,7 @@ export class AppSharedModules {
       ngModule: AppSharedModules,
       providers: [
         AppGlobalSettings,
-        AppUtils
+        AppUtils,
       ]
     };
   }

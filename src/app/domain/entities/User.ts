@@ -13,7 +13,7 @@ export interface User {
 export type RegisterDto = User & { password_confirm: string };
 
 export class UserUtils {
-  public static getEmpty() {
+  public static getEmpty(): User {
     return {
       id: 0,
       username: '',

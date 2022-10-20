@@ -3,16 +3,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 import { AppFormService } from '@shared/services/app.form.service';
-//import { AppFormValidators } from '@shared/services/app.form-validators.service';
 import { AppSnackBarComponent } from '@shared/widgets/snackbar/app.snackbar.widget';
 import { Patient } from '@entity/Patient';
 import { MatTableDataSource } from '@angular/material/table';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
-/*import { first } from 'rxjs/operators';
-import { of, throwError } from 'rxjs';
-import { HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
-import { User } from '@entity/User';*/
 
 @Component({
   selector: 'app-patients-list',
@@ -25,10 +20,9 @@ export class PatientsListComponent implements OnInit {
   paginator!: MatPaginator;
 
   patients: Patient[] = [
-    {id:1, first_name: 'Brice', last_name: 'NTSA'},
-    {id:2, first_name: 'Karèle', last_name: 'NTSA'},
-    {id:3, first_name: 'Micky', last_name: 'ABSHIR'},
-    {id:4, first_name: 'Richard', last_name: 'AYUK'},
+    {id:1, first_name: 'Jessica', last_name: 'Halloway'},
+    {id:2, first_name: 'Amy', last_name: 'Thomson'},
+    {id:3, first_name: 'George', last_name: 'Remucal'},
   ];
 
   displayedColumns: string[] = ['select', 'first_name', 'last_name'];

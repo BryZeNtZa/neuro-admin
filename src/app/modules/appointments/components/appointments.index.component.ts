@@ -11,15 +11,21 @@ export class AppointmentsIndexComponent {
     state: 'open',
     menu: [
       {
-        title: 'Upcomming appointments',
+        title: 'Outstanding appointments',
         url: 'appointments',
-        label: 'Upcomming appointments',
+        label: 'Outstanding appointments',
         state: 'active'
       },
       {
         title: 'Appointments history',
-        url: 'appointments',
+        url: 'appointments/history',
         label: 'Appointments history',
+        state: 'inactive'
+      },
+      {
+        title: 'Create ppointment',
+        url: 'appointments/create',
+        label: 'Create appointment',
         state: 'inactive'
       }
     ]
